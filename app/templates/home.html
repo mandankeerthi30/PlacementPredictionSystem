@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% set active_page = 'home' %}
+
+{% block title %}Home – Placement Prediction System{% endblock %}
+
+{% block content %}
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">
+                <i class="fas fa-rocket" style="margin-right:6px;"></i> AI-Powered
+            </span>
+            <h1>
+                Predict Your <br /><span>Placement Success</span>
+            </h1>
+            <p>
+                Leverage machine learning to analyze your academic profile,
+                skills, and experience — and get a data-driven prediction
+                of your campus placement outcomes.
+            </p>
+            <div class="hero-actions">
+                <a href="{{ url_for('prediction') }}" class="btn btn-primary">
+                    <i class="fas fa-arrow-right"></i> Start Prediction
+                </a>
+                <a href="{{ url_for('dataset') }}" class="btn btn-outline">
+                    <i class="fas fa-database"></i> View Dataset
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Navigation Grid (all pages) -->
+    <h2 style="font-size: 28px; font-weight: 700; color: var(--primary-dark); margin: 40px 0 20px; display: flex; align-items: center; gap: 12px;">
+        <i class="fas fa-compass" style="color: var(--accent);"></i> Explore the System
+    </h2>
+    <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+        <a href="{{ url_for('dataset') }}" style="text-decoration: none;">
+            <div class="feature-card">
+                <span class="icon"><i class="fas fa-database"></i></span>
+                <h3>Dataset</h3>
+                <p>View &amp; manage data</p>
+            </div>
+        </a>
+        <a href="{{ url_for('preprocessing') }}" style="text-decoration: none;">
+            <div class="feature-card">
+                <span class="icon"><i class="fas fa-filter"></i></span>
+                <h3>Preprocessing</h3>
+                <p>Clean &amp; transform</p>
+            </div>
+        </a>
+        <a href="{{ url_for('eda') }}" style="text-decoration: none;">
+            <div class="feature-card">
+                <span class="icon"><i class="fas fa-chart-scatter"></i></span>
+                <h3>EDA</h3>
+                <p>Explore &amp; visualize</p>
+            </div>
+        </a>
+        <a href="{{ url_for('models') }}" style="text-decoration: none;">
+            <div class="feature-card">
+                <span class="icon"><i class="fas fa-cubes"></i></span>
+                <h3>Models</h3>
+                <p>Train &amp; tune</p>
+            </div>
+        </a>
+        <a href="{{ url_for('prediction') }}" style="text-decoration: none;">
+            <div class="feature-card">
+                <span class="icon"><i class="fas fa-brain"></i></span>
+                <h3>Prediction</h3>
+                <p>Run inference</p>
+            </div>
+        </a>
+        <a href="{{ url_for('evalution') }}" style="text-decoration: none;">
+            <div class="feature-card">
+                <span class="icon"><i class="fas fa-check-double"></i></span>
+                <h3>Evaluation</h3>
+                <p>Assess performance</p>
+            </div>
+        </a>
+        <a href="{{ url_for('comparison') }}" style="text-decoration: none;">
+            <div class="feature-card">
+                <span class="icon"><i class="fas fa-arrows-left-right"></i></span>
+                <h3>Comparison</h3>
+                <p>Compare models</p>
+            </div>
+        </a>
+        <a href="{{ url_for('profile') }}" style="text-decoration: none;">
+            <div class="feature-card">
+                <span class="icon"><i class="fas fa-user-circle"></i></span>
+                <h3>Profile</h3>
+                <p>Your account</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Key Features (original cards) -->
+    <h2 style="font-size: 28px; font-weight: 700; color: var(--primary-dark); margin: 60px 0 20px; display: flex; align-items: center; gap: 12px;">
+        <i class="fas fa-star" style="color: var(--accent);"></i> Key Features
+    </h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <span class="icon"><i class="fas fa-user-graduate"></i></span>
+            <h3>Student Profile</h3>
+            <p>Academic scores, internships, projects &amp; more.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon"><i class="fas fa-robot"></i></span>
+            <h3>ML Model</h3>
+            <p>Random Forest &amp; XGBoost with 92% accuracy.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon"><i class="fas fa-file-alt"></i></span>
+            <h3>Detailed Report</h3>
+            <p>Get actionable insights &amp; improvement tips.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon"><i class="fas fa-shield-alt"></i></span>
+            <h3>Privacy First</h3>
+            <p>Your data is encrypted and never shared.</p>
+        </div>
+    </div>
+{% endblock %}
