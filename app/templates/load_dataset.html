@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dataset Loading</h2>
+<p>Loaded Successfully</p>
+<h3>Dataset Summary</h3>
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Total Records<th>
+        <td>{{summary.rows}}</td>
+    </tr>
+    <tr>
+        <th>Target Variables<th>
+        <td>{{summary.columns}}</td>
+    </tr>
+    <tr>
+        <th>Target Variable<th>
+        <td>{{summary.target}}</td>
+    </tr>
+</table>
+<br>
+<h3>First Five Records</h3>
+{{ first_rows | safe }}
+{% endblock %}

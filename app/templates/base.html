@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}Placement Prediction System{% endblock %}</title>
+    <title>{% block title %}Placement Predictor{% endblock %}</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Fraunces (display), Public Sans (body), IBM Plex Mono (data/labels) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
 
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -24,14 +24,14 @@
     <header class="header">
         <div class="container">
 
-            <!-- Logo with student icon -->
+            <!-- Logo, styled as an embossed seal -->
             <div class="logo-wrapper">
                 <div class="logo-icon">
-                    <i class="fas fa-graduation-cap"></i>   <!-- Student logo -->
+                    <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div class="logo-text">
                     <span class="brand">Placement Predictor</span>
-                    <span class="tagline">Smart Career Analytics</span>
+                    <span class="tagline">Student Dossier &middot; Career Analytics</span>
                 </div>
             </div>
 
@@ -42,15 +42,14 @@
 
             <!-- Navigation Links -->
             <nav class="nav" id="mainNav">
-                <!-- Home -->
                 <a href="{{ url_for('home') }}" {% if active_page == 'home' %}class="active"{% endif %}>
                     <i class="fas fa-home"></i> Home
                 </a>
 
-                <!-- Dropdown: Exporting the system -->
+                <!-- Dropdown: the eight-step pipeline, numbered by CSS counter -->
                 <div class="dropdown">
                     <a href="#" class="dropdown-toggle" id="systemDropdown">
-                        <i class="fas fa-cogs"></i> Exporting the system <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-route"></i> The Pipeline <i class="fas fa-chevron-down"></i>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="{{ url_for('dataset') }}"><i class="fas fa-database"></i> Dataset</a></li>
@@ -72,7 +71,94 @@
     <main class="main-content">
         <div class="container">
             {% block content %}
-            <p>Welcome to Placement Predictor. Please extend this template.</p>
+
+            <!-- Dossier tab -->
+            <div class="dossier-tab">
+                <span class="dot"></span> Dossier No. 2026 &middot; Status: Active
+            </div>
+
+            <!-- ---- Hero: the record and its verdict ---- -->
+            <section class="hero">
+                <div class="hero-content">
+                    <span class="hero-badge">Campus Career Analytics</span>
+                    <h1>Know your placement odds <em>before</em> the interview call.</h1>
+                    <p>
+                        Feed in academic record, skills and prior outcomes — the pipeline
+                        cleans the data, trains a set of models, and returns a single,
+                        explainable prediction: placed or not, and why.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="{{ url_for('prediction') }}" class="btn btn-primary">
+                            <i class="fas fa-brain"></i> Run a Prediction
+                        </a>
+                        <a href="{{ url_for('dataset') }}" class="btn btn-outline">
+                            <i class="fas fa-route"></i> Walk the Pipeline
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Signature element: the verification seal -->
+                <div class="seal-wrap">
+                    <svg class="seal" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Model confidence seal, ninety two percent">
+                        <defs>
+                            <path id="sealTextPath" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0" />
+                        </defs>
+                        <circle cx="100" cy="100" r="94" class="seal-ring-outer" />
+                        <g class="seal-rotating">
+                            <circle cx="100" cy="100" r="78" class="seal-ring-inner" />
+                            <text class="seal-text">
+                                <textPath href="#sealTextPath" startOffset="0%">PLACEMENT VERIFIED &#8226; MODEL CONFIDENCE &#8226; </textPath>
+                            </text>
+                        </g>
+                        <text x="100" y="96" class="seal-score">92%</text>
+                        <text x="100" y="120" class="seal-label">Match Score</text>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- ---- The eight-step pipeline, in true order ---- -->
+            <section class="pipeline-strip">
+                <span class="strip-label">The Pipeline &mdash; in order</span>
+                <div class="pipeline-track">
+                    <a class="pipeline-step" href="{{ url_for('dataset') }}"><span class="step-num">01</span><span class="step-name">Dataset</span></a>
+                    <a class="pipeline-step" href="{{ url_for('preprocessing') }}"><span class="step-num">02</span><span class="step-name">Preprocessing</span></a>
+                    <a class="pipeline-step" href="{{ url_for('eda') }}"><span class="step-num">03</span><span class="step-name">EDA</span></a>
+                    <a class="pipeline-step" href="{{ url_for('models') }}"><span class="step-num">04</span><span class="step-name">Models</span></a>
+                    <a class="pipeline-step" href="{{ url_for('prediction') }}"><span class="step-num">05</span><span class="step-name">Prediction</span></a>
+                    <a class="pipeline-step" href="{{ url_for('evalution') }}"><span class="step-num">06</span><span class="step-name">Evaluation</span></a>
+                    <a class="pipeline-step" href="{{ url_for('comparison') }}"><span class="step-num">07</span><span class="step-name">Comparison</span></a>
+                    <a class="pipeline-step" href="{{ url_for('profile') }}"><span class="step-num">08</span><span class="step-name">Profile</span></a>
+                </div>
+            </section>
+
+            <!-- ---- Ledger cards: what's inside the dossier ---- -->
+            <section class="feature-grid">
+                <div class="feature-card">
+                    <span class="card-tag mono">01&ndash;03</span>
+                    <i class="fas fa-database icon"></i>
+                    <h3>Clean Data In</h3>
+                    <p>Raw placement records get scrubbed, encoded and explored before anything is trained on them.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="card-tag mono">04</span>
+                    <i class="fas fa-cubes icon"></i>
+                    <h3>Several Models</h3>
+                    <p>Multiple classifiers are trained side by side so no single algorithm's bias goes unchecked.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="card-tag mono">05</span>
+                    <i class="fas fa-brain icon"></i>
+                    <h3>One Prediction</h3>
+                    <p>Enter a student's profile and get a placed / not-placed call, with the reasoning behind it.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="card-tag mono">06&ndash;07</span>
+                    <i class="fas fa-scale-balanced icon"></i>
+                    <h3>Held Accountable</h3>
+                    <p>Every model is scored and lined up against the others, so the best one earns its place.</p>
+                </div>
+            </section>
+
             {% endblock %}
         </div>
     </main>

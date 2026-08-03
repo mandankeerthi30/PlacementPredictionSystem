@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from src.data.load_data import load_data,get_summary
 
 app = Flask(__name__)
 
@@ -8,7 +9,14 @@ def home():
 
 @app.route('/dataset')
 def dataset():
-    return render_template('dataset.html')
+    df=load_data()
+    summary=get_summary(df)
+
+    return render_template(
+        template_name_or_list="load_dataset.html",
+        summary=summary,
+        first_rows=df.head().to_html(index=False)
+    )
 
 @app.route('/preprocessing')
 def preprocessing():
