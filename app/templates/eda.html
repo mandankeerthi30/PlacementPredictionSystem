@@ -1,10 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+
+<h2>EXPLORATORY DATA ANALYSIS</h2>
+
+<h3>1. Placement Status Bar Chart</h3>
+<img src="{{ url_for('static', filename='charts/results/placement_status_barchart.png') }}" alt="Placement Status Bar Chart" width="600">
+
+<br><br>
+
+<h3>2. CGPA Histogram</h3>
+<img src="{{ url_for('static', filename='charts/results/Histogram.png') }}" alt="CGPA Histogram" width="600">
+
+<br><br>
+
+<h3>3. Gender Pie Chart</h3>
+<img src="{{ url_for('static', filename='charts/results/Pie Chart.png') }}" alt="Gender Pie Chart" width="600">
+
+<br><br>
+
+<h3>4. Scatter Plot (CGPA vs Aptitude Test Score)</h3>
+<img src="{{ url_for('static', filename='charts/results/scatterplot.png') }}" alt="Scatter Plot" width="600">
+
+<br><br>
+
+<h3>5. Box Plot (CGPA vs Placement Status)</h3>
+<img src="{{ url_for('static', filename='charts/results/boxplot.png') }}" alt="Box Plot" width="600">
+
+<br><br>
+
+<h3>6. Correlation Heatmap</h3>
+<img src="{{ url_for('static', filename='charts/results/heatmap.png') }}" alt="Correlation Heatmap" width="600">
+
+<br><br>
+
+<h3>7. Complete Correlation Matrix</h3>
+<img src="{{ url_for('static', filename='charts/results/heatmap2.png') }}" alt="Complete Correlation Matrix" width="600">
+
+{% endblock %}
