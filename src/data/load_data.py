@@ -1,6 +1,6 @@
 import pandas as pd
 def load_data():
- df=pd.read_csv(r'C:\Users\YASASWINI\PycharmProjects\Placementpredictionsystem\data\placement_data (1).csv')
+ df=pd.read_csv(r'C:\Users\hp\PycharmProjects\Placementpredictionsystem\data\placement_data (1).csv')
  return df
 def get_summary(df):
  return {

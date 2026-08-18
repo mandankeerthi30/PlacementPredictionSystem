@@ -43,7 +43,7 @@ def basic_eda(df):
     plt.title("Placement Status")
     plt.xlabel("Placement Status")
     plt.ylabel("Count")
-    plt.savefig(r"C:\Users\YASASWINI\PycharmProjects\Placementpredictionsystem\app\static\charts\results\placement_status_barchart.png")
+    plt.savefig(r"C:\Users\hp\PycharmProjects\Placementpredictionsystem\app\static\charts\results\placement_status_barchart.png")
     plt.show()
     plt.close()
 
@@ -58,7 +58,7 @@ def univariate(df):
     plt.title("Histogram of CGPA")
     plt.xlabel("CGPA")
     plt.ylabel("Frequency")
-    plt.savefig(r"C:\Users\YASASWINI\PycharmProjects\Placementpredictionsystem\app\static\charts\results\Histogram.png")
+    plt.savefig(r"C:\Users\hp\PycharmProjects\Placementpredictionsystem\app\static\charts\results\Histogram.png")
     plt.show()
     plt.close()
 
@@ -73,7 +73,7 @@ def univariate(df):
         startangle=90
     )
     plt.title("Gender Distribution")
-    plt.savefig(r"C:\Users\YASASWINI\PycharmProjects\Placementpredictionsystem\app\static\charts\results\Pie Chart.png")
+    plt.savefig(r"C:\Users\hp\PycharmProjects\Placementpredictionsystem\app\static\charts\results\Pie Chart.png")
     plt.show()
     plt.close()
 
@@ -88,7 +88,7 @@ def bivariate(df):
     plt.title("CGPA vs Aptitude Test Score")
     plt.xlabel("CGPA")
     plt.ylabel("Aptitude Test Score")
-    plt.savefig(r"C:\Users\YASASWINI\PycharmProjects\Placementpredictionsystem\app\static\charts\results\scatterplot.png")
+    plt.savefig(r"C:\Users\hp\PycharmProjects\Placementpredictionsystem\app\static\charts\results\scatterplot.png")
     plt.show()
     plt.close()
 
@@ -104,7 +104,7 @@ def bivariate(df):
     plt.title("CGPA vs Placement Status")
     plt.xlabel("Placement Status")
     plt.ylabel("CGPA")
-    plt.savefig(r"C:\Users\YASASWINI\PycharmProjects\Placementpredictionsystem\app\static\charts\results\boxplot.png")
+    plt.savefig(r"C:\Users\hp\PycharmProjects\Placementpredictionsystem\app\static\charts\results\boxplot.png")
     plt.show()
     plt.close()
 
@@ -121,7 +121,7 @@ def multivariate(df):
     plt.figure(figsize=(6, 5))
     sns.heatmap(correlation, annot=True, cmap="coolwarm", fmt=".2f")
     plt.title("Correlation Matrix")
-    plt.savefig(r"C:\Users\YASASWINI\PycharmProjects\Placementpredictionsystem\app\static\charts\results\heatmap.png")
+    plt.savefig(r"C:\Users\hp\PycharmProjects\Placementpredictionsystem\app\static\charts\results\heatmap.png")
     plt.show()
     plt.close()
 
@@ -131,7 +131,7 @@ def multivariate(df):
     plt.figure(figsize=(8, 6))
     sns.heatmap(correlation, annot=True, cmap="coolwarm", fmt=".2f")
     plt.title("Complete Correlation Matrix")
-    plt.savefig(r"C:\Users\YASASWINI\PycharmProjects\Placementpredictionsystem\app\static\charts\results\heatmap2.png")
+    plt.savefig(r"C:\Users\hp\PycharmProjects\Placementpredictionsystem\app\static\charts\results\heatmap2.png")
     plt.show()
     plt.close()
 
