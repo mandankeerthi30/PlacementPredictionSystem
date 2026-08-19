@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcfe3101-2040-43cd-aae7-88160d4c8283" name="Changes" comment="Project structure is updated">
-      <change afterPath="$PROJECT_DIR$/src/data/preprocess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/iris.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/iris.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/logistic_reg.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/ML models/logistic_regression.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/preprocessed_test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/preprocessed_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/preprocess.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +42,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Keerthi/Placement-Prediction-System.git&quot;,
-    &quot;accountId&quot;: &quot;8f1b20df-24f7-4f2a-9a80-7f806a040d87&quot;
+    &quot;url&quot;: &quot;https://github.com/yasaswinichalla2008-del/Placement-Prediction-System.git&quot;,
+    &quot;accountId&quot;: &quot;718c07dc-bfb6-4292-b13c-a4b2d7eee437&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -54,28 +58,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.eda.executor&quot;: &quot;Run&quot;,
-    &quot;Python.iris.executor&quot;: &quot;Run&quot;,
-    &quot;Python.load_data.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/hp/PycharmProjects/Placementpredictionsystem/app/static/charts&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.app.executor": "Run",
+    "Python.eda.executor": "Run",
+    "Python.iris.executor": "Run",
+    "Python.load_data.executor": "Run",
+    "Python.logistic_regression.executor": "Run",
+    "Python.preprocess.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/hp/PycharmProjects/Placementpredictionsystem/app/static/charts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\hp\PycharmProjects\Placementpredictionsystem\app\static\charts" />
