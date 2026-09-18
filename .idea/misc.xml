@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Black">
     <option name="sdkName" value="Python 3.14 (Placementpredictionsystem)" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.14 (Placementpredictionsystem)" project-jdk-type="Python SDK" />
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="sdkName" value="Python 3.14 (PlacementPredictionSystem)" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.14 (PlacementPredictionSystem)" project-jdk-type="Python SDK" />
+>>>>>>> 0dfb998aba6e1106d7322de38b23cb6620e6786f
 </project>

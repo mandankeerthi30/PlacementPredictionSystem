@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectModuleManager">
@@ -5,4 +6,13 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/Placementpredictionsystem.iml" filepath="$PROJECT_DIR$/.idea/Placementpredictionsystem.iml" />
     </modules>
   </component>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/PlacementPredictionSystem.iml" filepath="$PROJECT_DIR$/.idea/PlacementPredictionSystem.iml" />
+    </modules>
+  </component>
+>>>>>>> 0dfb998aba6e1106d7322de38b23cb6620e6786f
 </project>
