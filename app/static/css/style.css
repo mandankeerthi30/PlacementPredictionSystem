@@ -15,30 +15,30 @@
 
 :root {
     /* ---- Ink (navy, primary UI + text) ---- */
-    --ink: #16233f;
-    --ink-mid: #24365c;
-    --ink-soft: #3d5482;
+    --ink: #101b33;
+    --ink-mid: #1e3a68;
+    --ink-soft: #41699f;
 
     /* ---- Paper (ledger stock, not cream) ---- */
-    --paper: #eceee3;
-    --paper-line: #d4d6c6;
-    --card: #fffefa;
+    --paper: #f3f5f1;
+    --paper-line: #d8ded8;
+    --card: #fffdf8;
 
     /* ---- Accent: brass seal + sage rule ---- */
-    --brass: #b3811f;
-    --brass-light: #d8a63f;
-    --sage: #5f7768;
-    --verified: #2f6d4f;
+    --brass: #c58a18;
+    --brass-light: #edbd4f;
+    --sage: #52776b;
+    --verified: #2f8a61;
 
-    --text: #16233f;
-    --muted: #57617a;
-    --text-on-ink: #f4f2e8;
-    --muted-on-ink: rgba(244, 242, 232, 0.68);
+    --text: #14233f;
+    --muted: #5d6c83;
+    --text-on-ink: #f7f8f3;
+    --muted-on-ink: rgba(247, 248, 243, 0.72);
 
     --radius-sm: 6px;
     --radius: 12px;
-    --shadow: 0 10px 28px rgba(22, 35, 63, 0.09);
-    --shadow-hover: 0 22px 46px rgba(22, 35, 63, 0.16);
+    --shadow: 0 12px 30px rgba(16, 27, 51, 0.10);
+    --shadow-hover: 0 24px 55px rgba(16, 27, 51, 0.18);
     --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     --max-width: 1200px;
 }
@@ -65,8 +65,10 @@ body {
     font-size: 17px;
     background: var(--paper);
     background-image:
-        linear-gradient(var(--paper-line) 1px, transparent 1px);
-    background-size: 100% 42px;
+        linear-gradient(rgba(216, 222, 216, 0.78) 1px, transparent 1px),
+        radial-gradient(circle at 12% 8%, rgba(237, 189, 79, 0.10), transparent 25%),
+        radial-gradient(circle at 88% 22%, rgba(65, 105, 159, 0.08), transparent 28%);
+    background-size: 100% 42px, auto, auto;
     color: var(--text);
     line-height: 1.7;
     display: flex;
@@ -97,7 +99,7 @@ img {
 
 /* ===== HEADER ===== */
 .header {
-    background: linear-gradient(120deg, var(--ink) 0%, var(--ink-mid) 100%);
+    background: linear-gradient(120deg, #0d1830 0%, #1e3a68 58%, #294b7b 100%);
     color: var(--text-on-ink);
     padding: 18px 0;
     position: sticky;
@@ -357,7 +359,8 @@ img {
 
 /* ---- Hero ---- */
 .hero {
-    background: var(--card);
+    background:
+        linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(250, 251, 246, 0.96));
     border-radius: 0 var(--radius) var(--radius) var(--radius);
     padding: 56px 50px;
     box-shadow: var(--shadow);
@@ -914,4 +917,83 @@ img {
     .header .container {
         flex-wrap: wrap;
     }
+}
+
+
+/* =========================================================
+   CREATIVE COLOR POLISH
+   Added without changing your existing class structure
+   ========================================================= */
+
+.header {
+    backdrop-filter: blur(10px);
+}
+
+.logo-icon {
+    box-shadow:
+        0 0 0 4px rgba(237, 189, 79, 0.10),
+        0 8px 20px rgba(197, 138, 24, 0.18);
+}
+
+.nav a:hover,
+.nav a.active {
+    box-shadow:
+        inset 0 -2px 0 var(--brass-light),
+        0 4px 15px rgba(237, 189, 79, 0.08);
+}
+
+.hero {
+    box-shadow:
+        0 18px 45px rgba(16, 27, 51, 0.10),
+        0 2px 0 rgba(255, 255, 255, 0.8) inset;
+}
+
+.btn-primary {
+    background:
+        linear-gradient(135deg, #b9770e, #d49a24 55%, #edbd4f);
+}
+
+.btn-primary:hover {
+    background:
+        linear-gradient(135deg, #c88717, #e1aa35 55%, #f2c75e);
+}
+
+.feature-card {
+    background:
+        linear-gradient(145deg, #fffefa 0%, #fbfcf7 100%);
+}
+
+.feature-card:hover {
+    box-shadow:
+        0 20px 42px rgba(16, 27, 51, 0.13),
+        0 0 0 1px rgba(197, 138, 24, 0.10);
+}
+
+.pipeline-step:hover {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(237, 189, 79, 0.08),
+            rgba(255, 255, 255, 0.85)
+        );
+}
+
+.dropdown-menu {
+    box-shadow:
+        0 20px 45px rgba(16, 27, 51, 0.16);
+}
+
+.footer {
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(237, 189, 79, 0.08),
+            transparent 28%
+        ),
+        linear-gradient(135deg, #0d1830, #1e3a68);
+}
+
+::selection {
+    background: rgba(197, 138, 24, 0.22);
+    color: var(--ink);
 }

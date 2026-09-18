@@ -11,28 +11,55 @@ from sklearn.preprocessing import (
 from src.data.load_data import load_data
 
 
-# ---------------------------------------------------------
+# =========================================================
 # 1. SPLIT DATA
-# ---------------------------------------------------------
-def split_data(df):
+# =========================================================
 
-    X = df.drop(columns=["PlacementStatus"])
-    y = df["PlacementStatus"]
+def split_data(df, target_column, drop_columns=None, stratify=False):
 
+    if drop_columns is None:
+        drop_columns = []
+
+    # Create X by removing target and unwanted columns
+    X = df.drop(columns=drop_columns + [target_column])
+
+    # Create target variable
+    y = df[target_column]
+
+    # Stratification
+    stratify_value = y if stratify else None
+
+    # Train-test split
     X_train, X_test, y_train, y_test = train_test_split(
         X,
         y,
         test_size=0.2,
         random_state=42,
-        stratify=y
+        stratify=stratify_value
     )
 
     return X_train, X_test, y_train, y_test
 
 
-# ---------------------------------------------------------
-# 2. IDENTIFY NUMERICAL AND CATEGORICAL FEATURES
-# ---------------------------------------------------------
+# =========================================================
+# 2. SPLIT X DATA
+# =========================================================
+
+def split_x_data(df, drop_columns=None):
+
+    if drop_columns is None:
+        drop_columns = []
+
+    # Remove unwanted columns
+    X = df.drop(columns=drop_columns)
+
+    return X
+
+
+# =========================================================
+# 3. IDENTIFY NUMERICAL AND CATEGORICAL FEATURES
+# =========================================================
+
 def identify_features(X):
 
     numerical_features = X.select_dtypes(
@@ -46,9 +73,10 @@ def identify_features(X):
     return numerical_features, categorical_features
 
 
-# ---------------------------------------------------------
-# 3. HANDLE MISSING VALUES
-# ---------------------------------------------------------
+# =========================================================
+# 4. HANDLE MISSING VALUES
+# =========================================================
+
 def handle_missing_values(
         X_train,
         X_test,
@@ -75,9 +103,10 @@ def handle_missing_values(
     return X_train, X_test, imputer
 
 
-# ---------------------------------------------------------
-# 4. STANDARDIZATION
-# ---------------------------------------------------------
+# =========================================================
+# 5. STANDARDIZATION
+# =========================================================
+
 def standardize(
         X_train,
         X_test,
@@ -89,7 +118,7 @@ def standardize(
     X_train = X_train.copy()
     X_test = X_test.copy()
 
-    # Fit + transform training data
+    # Fit and transform training data
     X_train[numerical_features] = scaler.fit_transform(
         X_train[numerical_features]
     )
@@ -102,9 +131,31 @@ def standardize(
     return X_train, X_test, scaler
 
 
-# ---------------------------------------------------------
-# 5. ONE-HOT ENCODING
-# ---------------------------------------------------------
+# =========================================================
+# 6. STANDARDIZATION ALIAS
+# =========================================================
+# This allows other files to use either:
+# standardize()
+# or
+# standardize_data()
+
+def standardize_data(
+        X_train,
+        X_test,
+        numerical_features
+):
+
+    return standardize(
+        X_train,
+        X_test,
+        numerical_features
+    )
+
+
+# =========================================================
+# 7. ONE-HOT ENCODING
+# =========================================================
+
 def one_hot_encode_data(
         X_train,
         X_test,
@@ -170,9 +221,10 @@ def one_hot_encode_data(
     return X_train, X_test, encoder
 
 
-# ---------------------------------------------------------
-# 6. ORDINAL ENCODING
-# ---------------------------------------------------------
+# =========================================================
+# 8. ORDINAL ENCODING
+# =========================================================
+
 def ordinal_encode_data(
         X_train,
         X_test,
@@ -241,21 +293,32 @@ def ordinal_encode_data(
 # =========================================================
 # MAIN
 # =========================================================
+
 if __name__ == "__main__":
 
     # -----------------------------------------------------
     # LOAD DATA
     # -----------------------------------------------------
+
     df = load_data()
 
     print("Original dataset shape:")
     print(df.shape)
 
+    print("\nOriginal columns:")
+    print(df.columns.tolist())
+
 
     # -----------------------------------------------------
     # SPLIT DATA
     # -----------------------------------------------------
-    X_train, X_test, y_train, y_test = split_data(df)
+
+    X_train, X_test, y_train, y_test = split_data(
+        df,
+        target_column="PlacementStatus",
+        drop_columns=[],
+        stratify=False
+    )
 
     print("\nTraining Shape:")
     print(X_train.shape)
@@ -267,6 +330,7 @@ if __name__ == "__main__":
     # -----------------------------------------------------
     # IDENTIFY FEATURES
     # -----------------------------------------------------
+
     numerical_features, categorical_features = identify_features(
         X_train
     )
@@ -281,7 +345,7 @@ if __name__ == "__main__":
     # -----------------------------------------------------
     # REMOVE STUDENT ID
     # -----------------------------------------------------
-    # StudentID is an identifier, not a useful numerical feature.
+
     if "StudentID" in X_train.columns:
 
         X_train = X_train.drop(
@@ -292,7 +356,8 @@ if __name__ == "__main__":
             columns=["StudentID"]
         )
 
-        numerical_features.remove("StudentID")
+        if "StudentID" in numerical_features:
+            numerical_features.remove("StudentID")
 
 
     # -----------------------------------------------------
@@ -311,11 +376,7 @@ if __name__ == "__main__":
     ]
 
     # Ordinal categorical features
-    #
-    # This assumes CGPA_Tier has an order such as:
     # Low < Medium < High
-    #
-    # If your dataset uses different values, change this.
     ordinal_features = [
         "CGPA_Tier"
     ]
@@ -324,6 +385,7 @@ if __name__ == "__main__":
     # -----------------------------------------------------
     # HANDLE MISSING VALUES
     # -----------------------------------------------------
+
     X_train, X_test, imputer = handle_missing_values(
         X_train,
         X_test,
@@ -331,6 +393,7 @@ if __name__ == "__main__":
     )
 
     print("\nMissing values after imputation:")
+
     print(
         X_train[numerical_features]
         .isnull()
@@ -343,6 +406,7 @@ if __name__ == "__main__":
     # -----------------------------------------------------
     # STANDARDIZE NUMERICAL FEATURES
     # -----------------------------------------------------
+
     X_train, X_test, scaler = standardize(
         X_train,
         X_test,
@@ -355,6 +419,7 @@ if __name__ == "__main__":
     # -----------------------------------------------------
     # ONE-HOT ENCODING
     # -----------------------------------------------------
+
     X_train, X_test, one_hot_encoder = one_hot_encode_data(
         X_train,
         X_test,
@@ -367,6 +432,7 @@ if __name__ == "__main__":
     # -----------------------------------------------------
     # ORDINAL ENCODING
     # -----------------------------------------------------
+
     X_train, X_test, ordinal_encoder = ordinal_encode_data(
         X_train,
         X_test,
@@ -379,6 +445,7 @@ if __name__ == "__main__":
     # -----------------------------------------------------
     # ADD TARGET COLUMN
     # -----------------------------------------------------
+
     X_train["PlacementStatus"] = y_train
     X_test["PlacementStatus"] = y_test
 
@@ -386,19 +453,19 @@ if __name__ == "__main__":
     # -----------------------------------------------------
     # SAVE PREPROCESSED DATA
     # -----------------------------------------------------
+
     train_path = (
         r"C:\Users\hp\PycharmProjects"
         r"\PlacementPredictionSystem\src\data"
         r"\preprocessed_train.csv"
     )
 
-
     test_path = (
-    r"C:\Users\hp\PycharmProjects"
-    r"\PlacementPredictionSystem\src\data"
-    r"\preprocessed_test.csv"
-
+        r"C:\Users\hp\PycharmProjects"
+        r"\PlacementPredictionSystem\src\data"
+        r"\preprocessed_test.csv"
     )
+
 
     X_train.to_csv(
         train_path,
@@ -414,6 +481,7 @@ if __name__ == "__main__":
     # -----------------------------------------------------
     # FINAL INFORMATION
     # -----------------------------------------------------
+
     print("\nFinal training shape:")
     print(X_train.shape)
 

@@ -1,122 +1,329 @@
 {% extends "base.html" %}
 
-{% set active_page = 'home' %}
-
-{% block title %}Home – Placement Prediction System{% endblock %}
-
 {% block content %}
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-content">
-            <span class="hero-badge">
-                <i class="fas fa-rocket" style="margin-right:6px;"></i> AI-Powered
-            </span>
-            <h1>
-                Predict Your <br /><span>Placement Success</span>
-            </h1>
-            <p>
-                Leverage machine learning to analyze your academic profile,
-                skills, and experience — and get a data-driven prediction
-                of your campus placement outcomes.
-            </p>
-            <div class="hero-actions">
-                <a href="{{ url_for('prediction') }}" class="btn btn-primary">
-                    <i class="fas fa-arrow-right"></i> Start Prediction
-                </a>
-                <a href="{{ url_for('dataset') }}" class="btn btn-outline">
-                    <i class="fas fa-database"></i> View Dataset
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Quick Navigation Grid (all pages) -->
-    <h2 style="font-size: 28px; font-weight: 700; color: var(--primary-dark); margin: 40px 0 20px; display: flex; align-items: center; gap: 12px;">
-        <i class="fas fa-compass" style="color: var(--accent);"></i> Explore the System
-    </h2>
-    <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
-        <a href="{{ url_for('dataset') }}" style="text-decoration: none;">
-            <div class="feature-card">
-                <span class="icon"><i class="fas fa-database"></i></span>
-                <h3>Dataset</h3>
-                <p>View &amp; manage data</p>
-            </div>
-        </a>
-        <a href="{{ url_for('preprocessing') }}" style="text-decoration: none;">
-            <div class="feature-card">
-                <span class="icon"><i class="fas fa-filter"></i></span>
-                <h3>Preprocessing</h3>
-                <p>Clean &amp; transform</p>
-            </div>
-        </a>
-        <a href="{{ url_for('eda') }}" style="text-decoration: none;">
-            <div class="feature-card">
-                <span class="icon"><i class="fas fa-chart-scatter"></i></span>
-                <h3>EDA</h3>
-                <p>Explore &amp; visualize</p>
-            </div>
-        </a>
-        <a href="{{ url_for('models') }}" style="text-decoration: none;">
-            <div class="feature-card">
-                <span class="icon"><i class="fas fa-cubes"></i></span>
-                <h3>Models</h3>
-                <p>Train &amp; tune</p>
-            </div>
-        </a>
-        <a href="{{ url_for('prediction') }}" style="text-decoration: none;">
-            <div class="feature-card">
-                <span class="icon"><i class="fas fa-brain"></i></span>
-                <h3>Prediction</h3>
-                <p>Run inference</p>
-            </div>
-        </a>
-        <a href="{{ url_for('evalution') }}" style="text-decoration: none;">
-            <div class="feature-card">
-                <span class="icon"><i class="fas fa-check-double"></i></span>
-                <h3>Evaluation</h3>
-                <p>Assess performance</p>
-            </div>
-        </a>
-        <a href="{{ url_for('comparison') }}" style="text-decoration: none;">
-            <div class="feature-card">
-                <span class="icon"><i class="fas fa-arrows-left-right"></i></span>
-                <h3>Comparison</h3>
-                <p>Compare models</p>
-            </div>
-        </a>
-        <a href="{{ url_for('profile') }}" style="text-decoration: none;">
-            <div class="feature-card">
-                <span class="icon"><i class="fas fa-user-circle"></i></span>
-                <h3>Profile</h3>
-                <p>Your account</p>
-            </div>
-        </a>
+<section class="hero-section">
+
+    <div class="hero-left">
+
+        <div class="ai-badge">
+            <span class="pulse-dot"></span>
+            AI-POWERED CAREER ANALYTICS
+        </div>
+
+        <h1>
+            Predict Your
+            <span>Placement Success</span>
+        </h1>
+
+        <p class="hero-description">
+            Discover your placement potential using machine learning.
+            Analyze your academic performance, skills, experience,
+            and career profile to get an intelligent prediction.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="{{ url_for('prediction') }}" class="primary-btn">
+                <span>🚀</span>
+                Start Prediction
+                <span class="arrow">→</span>
+            </a>
+
+            <a href="{{ url_for('dataset') }}" class="secondary-btn">
+                <span>📊</span>
+                Explore Dataset
+            </a>
+
+        </div>
+
+        <div class="trust-text">
+            <span>✓</span> Machine Learning
+            <span>✓</span> Data Driven
+            <span>✓</span> Career Focused
+        </div>
+
     </div>
 
-    <!-- Key Features (original cards) -->
-    <h2 style="font-size: 28px; font-weight: 700; color: var(--primary-dark); margin: 60px 0 20px; display: flex; align-items: center; gap: 12px;">
-        <i class="fas fa-star" style="color: var(--accent);"></i> Key Features
-    </h2>
+
+    <div class="hero-right">
+
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+
+        <div class="ai-card">
+
+            <div class="ai-card-header">
+                <div class="ai-icon">🤖</div>
+
+                <div>
+                    <h3>Placement AI</h3>
+                    <p>Prediction Engine</p>
+                </div>
+
+                <div class="status">
+                    <span></span>
+                    Active
+                </div>
+            </div>
+
+            <div class="prediction-circle">
+
+                <div class="circle-inner">
+                    <strong>92%</strong>
+                    <small>Potential</small>
+                </div>
+
+            </div>
+
+            <div class="progress-info">
+                <div>
+                    <span>Academic Profile</span>
+                    <b>Excellent</b>
+                </div>
+
+                <div class="progress-bar">
+                    <div style="width: 88%"></div>
+                </div>
+            </div>
+
+            <div class="mini-stats">
+
+                <div>
+                    <strong>8.9</strong>
+                    <span>CGPA</span>
+                </div>
+
+                <div>
+                    <strong>87%</strong>
+                    <span>Skills</span>
+                </div>
+
+                <div>
+                    <strong>12</strong>
+                    <span>Projects</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATISTICS -->
+
+<section class="stats-section">
+
+    <div class="stat-card">
+        <div class="stat-icon">🧠</div>
+        <div>
+            <h3>ML Powered</h3>
+            <p>Intelligent prediction models</p>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">📈</div>
+        <div>
+            <h3>Data Driven</h3>
+            <p>Analyze student performance</p>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">🎯</div>
+        <div>
+            <h3>Career Focused</h3>
+            <p>Improve placement readiness</p>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">⚡</div>
+        <div>
+            <h3>Fast Results</h3>
+            <p>Instant prediction analysis</p>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features-section">
+
+    <div class="section-heading">
+
+        <span>EXPLORE THE PLATFORM</span>
+
+        <h2>
+            Everything You Need
+            <br>
+            For <span>Placement Analysis</span>
+        </h2>
+
+        <p>
+            From raw student data to intelligent predictions,
+            explore the complete machine learning pipeline.
+        </p>
+
+    </div>
+
+
     <div class="feature-grid">
+
         <div class="feature-card">
-            <span class="icon"><i class="fas fa-user-graduate"></i></span>
-            <h3>Student Profile</h3>
-            <p>Academic scores, internships, projects &amp; more.</p>
+
+            <div class="feature-number">01</div>
+
+            <div class="feature-icon">📊</div>
+
+            <h3>Dataset</h3>
+
+            <p>
+                Explore the student dataset and understand
+                the information used by the prediction system.
+            </p>
+
+            <a href="{{ url_for('dataset') }}">
+                Explore Dataset →
+            </a>
+
         </div>
+
+
         <div class="feature-card">
-            <span class="icon"><i class="fas fa-robot"></i></span>
-            <h3>ML Model</h3>
-            <p>Random Forest &amp; XGBoost with 92% accuracy.</p>
+
+            <div class="feature-number">02</div>
+
+            <div class="feature-icon">⚙️</div>
+
+            <h3>Preprocessing</h3>
+
+            <p>
+                Clean, transform and prepare the data
+                before feeding it into machine learning models.
+            </p>
+
+            <a href="#">
+                View Process →
+            </a>
+
         </div>
+
+
         <div class="feature-card">
-            <span class="icon"><i class="fas fa-file-alt"></i></span>
-            <h3>Detailed Report</h3>
-            <p>Get actionable insights &amp; improvement tips.</p>
+
+            <div class="feature-number">03</div>
+
+            <div class="feature-icon">🧠</div>
+
+            <h3>ML Models</h3>
+
+            <p>
+                Compare different machine learning algorithms
+                and discover which model performs best.
+            </p>
+
+            <a href="#">
+                View Models →
+            </a>
+
         </div>
+
+
         <div class="feature-card">
-            <span class="icon"><i class="fas fa-shield-alt"></i></span>
-            <h3>Privacy First</h3>
-            <p>Your data is encrypted and never shared.</p>
+
+            <div class="feature-number">04</div>
+
+            <div class="feature-icon">📈</div>
+
+            <h3>Evaluation</h3>
+
+            <p>
+                Evaluate model performance using accuracy,
+                precision, recall and other metrics.
+            </p>
+
+            <a href="#">
+                View Evaluation →
+            </a>
+
         </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-number">05</div>
+
+            <div class="feature-icon">🔍</div>
+
+            <h3>Comparison</h3>
+
+            <p>
+                Compare multiple models and identify
+                the most effective prediction algorithm.
+            </p>
+
+            <a href="#">
+                Compare Models →
+            </a>
+
+        </div>
+
+
+        <div class="feature-card prediction-feature">
+
+            <div class="feature-number">06</div>
+
+            <div class="feature-icon">🚀</div>
+
+            <h3>Prediction</h3>
+
+            <p>
+                Enter your profile details and get your
+                personalized placement prediction.
+            </p>
+
+            <a href="{{ url_for('prediction') }}">
+                Predict Now →
+            </a>
+
+        </div>
+
     </div>
+
+</section>
+
+
+<!-- FINAL CTA -->
+
+<section class="cta-section">
+
+    <div class="cta-content">
+
+        <div class="cta-icon">🎓</div>
+
+        <h2>
+            Ready to Discover Your
+            <span>Placement Potential?</span>
+        </h2>
+
+        <p>
+            Let machine learning analyze your profile
+            and help you understand your career readiness.
+        </p>
+
+        <a href="{{ url_for('prediction') }}" class="cta-button">
+            🚀 Start Your Prediction
+        </a>
+
+    </div>
+
+</section>
+
 {% endblock %}
