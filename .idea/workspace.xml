@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcfe3101-2040-43cd-aae7-88160d4c8283" name="Changes" comment="Project structure is updated">
-      <change afterPath="$PROJECT_DIR$/src/data/ML models/Aglomarative_clustering.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/ML models/Decision_tree.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/ML models/Kmeans.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/ML models/gradientboosting.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/ML models/kmeans_elbow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/ML models/random_forest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/ML models/random_tree.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/ML models/regression.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Placementpredictionsystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Placementpredictionsystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/preprocess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/preprocessed_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/preprocessed_test.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/preprocessed_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/preprocessed_train.csv" afterDir="false" />
-    </list>
+    <list default="true" id="dcfe3101-2040-43cd-aae7-88160d4c8283" name="Changes" comment="Project structure is updated" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,12 +33,12 @@
     &quot;assignee&quot;: &quot;Keerthi&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/yasaswinichalla2008-del/Placement-Prediction-System.git&quot;,
-    &quot;accountId&quot;: &quot;718c07dc-bfb6-4292-b13c-a4b2d7eee437&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/mandankeerthi30/PlacementPredictionSystem.git",
+    "accountId": "718c07dc-bfb6-4292-b13c-a4b2d7eee437"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1,
   &quot;fromUser&quot;: false
